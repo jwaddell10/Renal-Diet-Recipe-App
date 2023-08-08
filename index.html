@@ -4,15 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
+    <title>Renal Recipe App</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="titlecontainer">
         <h1 class="title">Renal Diet Recipe App</h1>
     </div>
+    <div class="pickmealdropdownmenu">
+        <div class="mealdropdownmenucontainer">
+            <label for="meal-names">Choose a meal type:</label> 
+            <select name="meal-names" id="meal-names"> 
+            <option value="breakfast">Breakfast</option> 
+            <option value="lunch-dinner">Lunch/Dinner</option> 
+            <option value="snack">Snack</option> 
+            </select>
+        </div>
+    </div>
+    
     <div class="recipesearchbar">
-        <input type="text" placeholder="Search..">
+        <form>
+            <input type="text" name="search" id="search" placeholder="Search..">
+        </form>
+        
+    </div>
+
+    <div class="searchresultscontainer">
+        <div class="item">
+            <img src="download.jpeg" alt="recipe image">
+            <div class="flexcontainer">
+                <h1 class="recipetitle">This is a recipe</h1>
+                <a href="#">View Recipe</a>
+            </div>
+            <p class="item-data">Calories: 120</p>
+        </div>
+        <div class="item">
+            <img src="download.jpeg" alt="recipe image">
+            <div class="flexcontainer">
+                <h1 class="recipetitle">This is a recipe</h1>
+                <a href="#">View Recipe</a>
+            </div>
+            <p class="item-data">Calories: 120</p>
+        </div>
+        <div class="item">
+            <img src="download.jpeg" alt="recipe image">
+            <div class="flexcontainer">
+                <h1 class="recipetitle">This is a recipe</h1>
+                <a href="#">View Recipe</a>
+            </div>
+            <p class="item-data">Calories: 120</p>
+        </div>
     </div>
 	<script src="script.js"></script>
   </body>
