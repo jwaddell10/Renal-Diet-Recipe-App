@@ -74,7 +74,7 @@ async function fetchAPIBreakfastLowPrep() {
   `, { mode: 'cors' });
   const recipeSearchData = await response.json();
   // img.src = recipeSearchData.hits[3].recipe.images.thumbnail;
-  console.log(recipeSearchData.hits[0].recipe.calories);
+  console.log(recipeSearchData.hits[0].recipe.ingredientLines);
   generateHTML(recipeSearchData.hits);
 }
 
@@ -200,6 +200,7 @@ function generateHTML(results) {
                 <a href="${result.recipe.url}" target="_blank">View Recipe</a>
             </div>
             <p class="item-data">Calories: ${result.recipe.calories}</p>
+            <li class="ingredients">Ingredients: ${result.recipe.ingredientLines}</li>
     </div>
     `;
   });
