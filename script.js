@@ -17,7 +17,7 @@ recipeSearchBarForm.addEventListener('submit', (e) => {
 
   switch (`${mealTime}|${prepTime}`) {
     case 'breakfast|0to10minutes':
-      console.log('this is a short breakfast recipe');
+      fetchAPIBreakfastLowPrep();
       break;
     case 'breakfast|10to20minutes':
       console.log('this is a medium breakfast recipe');
@@ -57,9 +57,30 @@ recipeSearchBarForm.addEventListener('submit', (e) => {
   // console.log(searchQuery);
 });
 
-async function fetchAPILowPrep() {
-  const response = await fetch('https://api.edamam.com/api/recipes/v2?type=public&q=pizza&app_id=07219864&app_key=f83320eb349bdebfd72d4be76b29e58f&health=kidney-friendly&time=1-10', { mode: 'cors' });
-
+async function fetchAPIBreakfastLowPrep() {
+  console.log(searchQuery);
+  const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=07219864&app_key=f83320eb349bdebfd72d4be76b29e58f&health=kidney-friendly&time=1-10`, { mode: 'cors' });
+  const img = document.querySelector('img');
   const recipeSearchData = await response.json();
-  console.log(recipeSearchData.hits[1].recipe.url);
+  // img.src = recipeSearchData.hits[3].recipe.images.thumbnail;
+  console.log(recipeSearchData.hits[0].recipe.label);
+  generateHTML(recipeSearchData.hits);
+}
+
+function generateHTML(results) {
+  let generatedHTML = '';
+  results.map((result) => {
+    generatedHTML
+    += `
+    <div class="item">
+            <img src="${result.recipe.image}" alt="recipe image">
+            <div class="flexcontainer">
+                <h1 class="recipetitle">${result.recipe.label}</h1>
+                <a href="#">View Recipe</a>
+            </div>
+            <p class="item-data">Calories: 120</p>
+    </div>
+    `;
+  });
+  searchResultDiv.innerHTML = generatedHTML;
 }
