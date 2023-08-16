@@ -63,7 +63,7 @@ async function fetchAPIBreakfastLowPrep() {
   const img = document.querySelector('img');
   const recipeSearchData = await response.json();
   // img.src = recipeSearchData.hits[3].recipe.images.thumbnail;
-  console.log(recipeSearchData.hits[0].recipe.label);
+  console.log(recipeSearchData.hits[0].recipe.calories);
   generateHTML(recipeSearchData.hits);
 }
 
@@ -76,9 +76,9 @@ function generateHTML(results) {
             <img src="${result.recipe.image}" alt="recipe image">
             <div class="flexcontainer">
                 <h1 class="recipetitle">${result.recipe.label}</h1>
-                <a href="#">View Recipe</a>
+                <a href="${result.recipe.url}" target="_blank">View Recipe</a>
             </div>
-            <p class="item-data">Calories: 120</p>
+            <p class="item-data">Calories: ${result.recipe.calories}</p>
     </div>
     `;
   });
