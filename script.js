@@ -194,7 +194,7 @@ function generateHTML(results) {
     generatedHTML
     += `
     <div class="item">
-            <img src="${result.recipe.image}" alt="Not Found" onerror="this.src='download1.jpeg';">
+            <img src="${result.recipe.image}" alt="Not Found" onerror="this.src='download.jpg';">
             <div class="flexcontainer">
                 <h1 class="recipetitle">${result.recipe.label}</h1>
                 <a href="${result.recipe.url}" target="_blank">View Recipe</a>
