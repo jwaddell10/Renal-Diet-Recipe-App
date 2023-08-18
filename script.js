@@ -199,7 +199,7 @@ function generateHTML(results) {
                 <h1 class="recipetitle">${result.recipe.label}</h1>
                 <a href="${result.recipe.url}" target="_blank">View Recipe</a>
             </div>
-            <p class="item-data">Calories: ${result.recipe.calories}</p>
+            <p class="item-data">Calories: ${Math.floor(result.recipe.calories)}</p>
             <li class="ingredients">Ingredients: ${result.recipe.ingredientLines}</li>
     </div>
     `;

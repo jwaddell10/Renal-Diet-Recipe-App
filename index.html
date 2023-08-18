@@ -9,38 +9,34 @@
   </head>
   <body>
     <div class="titlecontainer">
-        <h1 class="title">Renal Diet Recipe App</h1>
-    </div>
-    <div class="dropdowncontainers">
-        <div class="pickmealdropdownmenu">
-            <div class="mealdropdownmenucontainer">
-                <label for="meal-names">Choose a meal type:</label> 
-                <select name="meal-names" id="meal-names"> 
-                <option value="breakfast">Breakfast</option> 
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option> 
-                <option value="snack">Snack</option> 
-                </select>
-            </div>
-        </div>
-        <div class="pickmealdropdownmenu">
-            <div class="mealdropdownmenucontainer">
-                <label for="prep-time">How long to cook?</label> 
-                <select name="prep-time" id="prep-time"> 
-                <option value="0to10minutes">0-10 minutes</option> 
-                <option value="10to20minutes">10-20 minutes</option> 
-                <option value="20plusminutes">20+ minutes</option> 
-                </select>
-            </div>
-        </div>
-    </div>
-    
+        <h1 class="title">RENAL DIET RECIPE APP</h1>
+    </div>    
     
     <div class="recipesearchbar">
         <form>
             <input type="text" name="search" id="search" placeholder="Search..">
         </form>
-        
+        <div class="dropdowncontainers">
+            <div class="pickmealdropdownmenu">
+                <div class="mealdropdownmenucontainer">
+                    <select name="meal-names" id="meal-names"> 
+                    <option value="breakfast">Breakfast</option> 
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option> 
+                    <option value="snack">Snack</option> 
+                    </select>
+                </div>
+            </div>
+            <div class="pickmealdropdownmenu">
+                <div class="mealdropdownmenucontainer">
+                    <select name="prep-time" id="prep-time"> 
+                    <option value="0to10minutes">0-10 minutes</option> 
+                    <option value="10to20minutes">10-20 minutes</option> 
+                    <option value="20plusminutes">20+ minutes</option> 
+                    </select>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="searchresultscontainer">
@@ -64,7 +60,7 @@
             <img src="download.jpeg" alt="recipe image">
             <div class="flexcontainer">
                 <h1 class="recipetitle">This is a recipe</h1>
-                <a href="#">View Recipe</a>
+                <a class="view-button" href="#">View Recipe</a>
             </div>
             <p class="item-data">Calories: 120</p>
         </div>
